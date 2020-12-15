@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['PANDIARY_DATABASE_USERNAME'] %>
-  password: <%= ENV['PANDIARY_DATABASE_PASSWORD'] %>
+  username: <%= ENV["PANDIARY_DATABASE_USERNAME"] %>
+  password: <%= ENV["PANDIARY_DATABASE_PASSWORD"] %>
   socket: /tmp/mysql.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: pandiary_production
-  username: <%= ENV['PANDIARY_DATABASE_USERNAME'] %>
-  password: <%= ENV['PANDIARY_DATABASE_PASSWORD'] %>
+  username: <%= ENV["PANDIARY_DATABASE_USERNAME"] %>
+  password: <%= ENV["PANDIARY_DATABASE_PASSWORD"] %>
