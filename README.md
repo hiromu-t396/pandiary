@@ -9,7 +9,6 @@
 ---
 
 - 新規登録機能
-- SNS 認証(OmuniAuth)
 - ログイン機能(devise)
 - ログアウト機能
 - 投稿機能(mini_magick)
@@ -20,13 +19,16 @@
 - 投稿へのコメント機能
 - タグ付機能
 - 他アカウントのフォロー
+- DM機能
+- 通知機能
+- グループ作成・参加機能
 
 # 使用技術
 
 ---
 
 - HTML/CSS
-- JavaScript(react)
+- JavaScript(jQuery)
 - ruby 2.6.5
 - Rails 6.0.3.4
 - AWS (EC2, RDS for MySQL, S3, VPC, Route53, ALB, ACM)
@@ -50,8 +52,11 @@
 
 ### Association
 
-- has_many :items
-- has_many :purchases
+- has_many :relationships
+- has_many :diarys
+- has_many :likes
+- has_many :comments
+- has_one  :profile
 
 ## profiles テーブル
 
@@ -61,11 +66,6 @@
 | liveplace | integer    |                   |
 | introduce | text       | null: false       |
 | user      | references | foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_one :purchase
 
 # diarys テーブル
 
@@ -80,8 +80,11 @@
 | bakery_id      | references | foreign_key: true |
 
 ### Association
-
-- belongs_to :purchase
+- has_many :taggings
+- has_many :likes
+- has_many :comments
+- belongs_to :user
+- belongs_to :bakery
 
 # comments テーブル
 
@@ -94,8 +97,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- has_one :address
+- belongs_to :diary
 
 # likes テーブル
 
@@ -107,6 +109,7 @@
 ### Association
 
 - belongs_to :user
+- belongs_to :diary
 
 # relationships テーブル
 
@@ -127,13 +130,18 @@
 | name      | string  | null: false       |
 | address   | string  |                   |
 | tell      | string  |                   |
-| open_time | integer |                   |
-| close_day | integer | null: failse      |
+| monday    | integer |                   |
+| tuesday   | integer |                   |
+| wednesday | integer |                   |
+| thursday  | integer |                   |
+| friday    | integer |                   |
+| saturday  | integer |                   |
+| sunday    | integer |                   |
 | parking   | integer | foreign_key: true |
 | web_site  | string  | foreign_key: true |
-| twitter   | string  | foreign_key: true |
 | instagram | string  | foreign_key: true |
+| twitter   | string  | foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase
+- has_many :diary
