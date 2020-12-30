@@ -1,0 +1,99 @@
+
+<header>
+  <nav>
+    <% if user_signed_in? %>
+      <strong><%= link_to current_user, pages_show_path %></strong>
+      <%= link_to 'プロフィール変更', edit_user_registration_path %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'サインアップ', new_user_registration_path, class:"signUp" %>
+      <div class='modal-signup'>
+        <div class='modal-bg-signup'></div>
+        <% if resource %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {novalidate: true, id: "signup-form"}) do |f| %>
+          <%# <%= render "devise/shared/error_messages", resource: resource %> 
+            <div class='contents'>
+            <div class='left-content'>
+              <div class='main-leftcontent'>
+                <h3 class='header-left'>限定機能を利用する<h3>
+                <ul class='main-content'>
+                  <div class='logo-content'>
+                    <li class='favorite'>
+                      <%= image_tag "registration/heart.png", alt: "Rails icon", id: "favorite", class: "image", width: "30px", height: "30px" %>
+                      <span class= 'feature_description'>お気に入り登録</span>
+                    </li>
+                  </div>
+                  <div class='logo-content'>
+                    <li class='look-back'>
+                      <%= image_tag "registration/eye.png", alt: "Rails icon", id: "eye", class: "image", width: "30px", height: "30px" %>
+                      <span class= 'feature_description'>いいねした投稿を見返せる</span>
+                    </li>
+                  </div>
+                  <div class='logo-content'>
+                    <li class='share'>
+                      <%= image_tag "registration/note.png", alt: "Rails icon", id: "note", class: "image", width: "30px", height: "30px" %>
+                      <span class= 'feature_description'>店の情報を共有する</span>
+                    </li>
+                  </div>
+                  <div class='logo-content'>
+                    <li class='group'>
+                      <%= image_tag "registration/people2.png", alt: "Rails icon", id: "people", class: "image", width: "30px", height: "30px" %>
+                      <span class= 'feature_description'>グループに参加し情報をゲット</span>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+            <div class='line'></div> <%# 真ん中の縦線 %>
+            <div class='right-content'>
+              <div class='main-rightcontent'>
+                <h3 class='header-right'>登録<h3>
+                    <div class='signup-form'>
+                      <div class='mail-box'>
+                          <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス",  autocomplete: "email"%>
+                      </div>
+                      <span class='email-error' style='display: none;'>このメールアドレスは無効です</span>
+                      <div class='password-box'>
+                          <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード" %>
+                      </div>
+                      <span class='password-error' style='display: none;'>パスワードは英数字含む8文字以上です</span>
+                    </div>
+                      <input class='signup-btn' type="submit" name="signup-btn" value="続ける">
+                  <div class='move-signin'>
+                    <p class='account'>アカウントをお持ちですか？</p>
+                    <a class='login' href="#">ログイン</a>
+                  </div>
+              </div>
+            </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to 'ログイン', new_user_session_path, class:"logIn" %>
+      <div class="modal-signin">
+      <div class='modal-bg-signin'></div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {novalidate: true, id: "signin-form"}) do |f| %>
+        <div class='signin-contents'>
+          <div class='signin-block'>
+            <h3 class='signin-header'>ログイン</h3>
+            <div class="signin-mail">
+              <%= f.email_field :email, class:"input-default", id:"signin-email", placeholder:"メールアドレス",  autocomplete: "email" %>
+            </div>
+            <span class='signin-email-error' style='display: none;'>このメールアドレスは無効です</span>
+            <div class='signin-password'>
+              <%= f.password_field :password, class:"input-default", id:"signin-password", placeholder:"パスワード" %>
+            </div>
+            <span class='signin-password-error' style='display: none;'>パスワードは英数字含む8文字以上です</span>
+            <input class='signin-btn' type="submit" name="signin-btm" value="ログイン"> 
+            <div class='signin-line'></div> <%# 横線 %>
+              <p class='signin-account'>アカウントがまだありませんか？</p>
+            <input class='create-account' type="submit" name="create-account" value="アカウントを作成"> 
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </nav>
+</header>
+
+<script type="text/javascript" src="js/registration.js"></script>
