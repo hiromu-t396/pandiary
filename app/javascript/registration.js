@@ -8,10 +8,8 @@ $(function () {
       $('.modal-signin').fadeOut();
       return false;
   });
-});
 
 /* 新規登録の「ログイン」をクリックするとログインのモーダルウィンドウ表示 */
-$(function () { 
   $('.login').on('click',function () {
       $('.modal-signin').fadeIn(),
       $('.modal-signup').fadeOut()
@@ -21,10 +19,8 @@ $(function () {
       $('.modal-signin').fadeOut();
       return false;
   });
-});
 
 /* 新規登録時メールアドレスのバリデーション */
-$(function(){
   $('#signup-form').submit(function()  {
     let error;
     let value = $('#email').val();
@@ -39,10 +35,8 @@ $(function(){
       $('.email-error').hide()
     }
   });
-});
 
 /* 新規登録時パスワードのバリデーション */ 
-$(function(){
   $('#signup-form').submit(function() {
     let error;
     let value = $('#password').val();
@@ -57,19 +51,15 @@ $(function(){
       $('.password-error').hide()
     }
   });
-});
 
 /* 新規登録の「続ける」にマウスオーバーで色が変わる */
-$(function() {
   $('.signup-btn').hover(function() {
     $(this).css('background', '#c00');
   }, function() {
     $(this).css('background', '');
   });
-});
 
 /* ログインを押すとモーダルが表示  */
-$(function () { 
   $('.logIn').on('click',function () {
       $('.modal-signin').fadeIn();
       return false;
@@ -78,10 +68,8 @@ $(function () {
       $('.modal-signin').fadeOut();
       return false;
   });
-});
 
 /* ログイン時メールアドレスのバリデーション */
-$(function(){
   $('#signin-form').submit(function()  {
     let error;
     let value = $('#signin-email').val();
@@ -96,10 +84,8 @@ $(function(){
       $('.signin-email-error').hide()
     }
   });
-});
 
 /* ログイン時パスワードのバリデーション */
-$(function(){
   $('#signin-form').submit(function() {
     let error;
     let value = $('#signin-password').val();
@@ -114,19 +100,15 @@ $(function(){
       $('.signin-password-error').hide()
     }
   });
-});
 
 /* ログインの「続ける」にマウスオーバーで色が変わる */
-$(function() {
   $('.signin-btn').hover(function() {
     $(this).css('background', '#c00');
   }, function() {
     $(this).css('background', '');
   });
-});
 
 /* ログインの「アカウントを作成」にマウスオーバーで色が変わる */
-$(function() {
   $('.create-account').hover(function() {
     $(this).css({
       background: 'black',
@@ -138,10 +120,8 @@ $(function() {
       color: ''
     });
   });
-});
 
 /* ログインの「アカウントを作成」をクリックすると新規登録のモーダルウィンドウ表示 */
-$(function () { 
   $('.create-account').on('click',function () {
       $('.modal-signup').fadeIn(),
       $('.modal-signin').fadeOut()
