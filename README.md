@@ -67,7 +67,7 @@
 | introduce | text       | null: false       |
 | user      | references | foreign_key: true |
 
-# diarys テーブル
+# diaries テーブル
 
 | Column         | Type       | Options           |
 | -------------- | ---------- | ----------------- |
