@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'pry-rails'
+gem 'jquery-rails'
+# 以下2つはdeviseを日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'

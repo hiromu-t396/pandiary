@@ -1,0 +1,286 @@
+header {
+  margin: 0;
+  width: 100vw;
+  height: 56px;
+ }
+
+ .header-icon {
+   margin: 40px;
+ }
+
+ .profileEdit {
+  position: absolute;
+  top: 14px;
+  left: 1130px;
+  font-size: 18px;
+  text-decoration: none;
+ }
+
+ .signOut {
+  position: absolute;
+  top: 14px;
+  left: 1290px;
+  font-size: 18px;
+  text-decoration: none;
+ }
+
+
+ .signUp {
+   position: absolute;
+   top: 14px;
+   left: 1220px;
+   font-size: 18px;
+   text-decoration: none;
+ }
+
+ .logIn {
+  position: absolute;
+  top: 14px;
+  left: 1330px;
+  font-size: 18px;
+  text-decoration: none;
+ }
+
+.modal-signup {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.modal-bg-signup {
+  background: rgba(0,0,0,0.3);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+ .contents {
+  background: #fff;
+  width: 956px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  border-radius:  30px;
+  position: relative;
+  margin-top: 100px;
+}
+
+.image {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.header-left {
+  margin-right: 30px;
+  float: left;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #0C121CDE;
+  font-size: 31px;
+  position: absolute;
+  top: 40px;
+  left: 100px;
+}
+
+.main-content {
+  list-style: none;
+  padding-left: 0%;
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+
+.logo-content {
+  color: #0C121C99;
+  font-size: 18px;
+  margin-bottom:  47px;
+}
+
+.line {
+  border-left: solid 1px #0C121C99;
+  height: 500px;
+}
+
+.header-right {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #0C121CDE;
+  font-size: 31px;
+  position: absolute;
+  top: 40px;
+  left: 550px;
+}
+
+.mail-box {
+  position: absolute;
+  top: 160px;
+  left: 550px;
+}
+
+input[type="email"] {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.email-error {
+  position: absolute;
+  top: 205px;
+  left: 550px;
+  font-size: 10px;
+  color: rgba(255, 0, 0, 0.801);
+}
+
+.password-box {
+  position: absolute;
+  top: 230px;
+  left: 550px;
+}
+
+input[type="password"] {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.password-error {
+  position: absolute;
+  top: 275px;
+  left: 550px;
+  font-size: 10px;
+  color: rgba(255, 0, 0, 0.801);
+}
+
+.signup-btn {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 280px;
+  left: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #F54336;
+  padding: 5px 120px;
+  margin-top: 35px;
+  border: solid 1px #0C121C99
+}
+
+.account {
+  color: #0C121C99;
+  font-size: 13px;
+  position: absolute;
+  top: 380px;
+  left: 550px;
+}
+
+.login {
+  color: rgba(0, 132, 255, 0.479);
+  font-size: 13px;
+  position: absolute;
+  top: 393px;
+  left: 730px;
+  text-decoration: none;
+}
+
+.modal-signin {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.modal-bg-signin {
+  background: rgba(0,0,0,0.3);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.signin-contents {
+  background: #fff;
+  width: 444px;
+  height: 558px;
+  margin: auto;
+  margin-top: 70px;
+  border: solid 1px black;
+  border-radius: 30px;
+  position: relative;
+}
+
+.signin-block {
+  width: 70%;
+  margin: 50px;
+}
+
+.signin-header {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #0C121CDE;
+  font-size: 31px;
+}
+
+.signin-mail{
+  margin-bottom: 22px;
+}
+
+.signin-email-error {
+  position: absolute;
+  top: 172px;
+  left: 50px;
+  font-size: 10px;
+  color: rgba(255, 0, 0, 0.801);
+}
+
+.signin-password {
+  margin-bottom: 22px;
+}
+
+.signin-password-error {
+  position: absolute;
+  top: 240px;
+  left: 50px;
+  font-size: 10px;
+  color: rgba(255, 0, 0, 0.801);
+}
+
+.signin-btn {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #F54336;
+  padding: 9px 120px;
+  margin-top: 35px;
+  border: solid 1px #0C121C99
+}
+
+.signin-line {
+  border-bottom: solid 1px #0c121c34;
+  margin: 40px 0;
+}
+
+.signin-account {
+  color: #0C121C99;  
+  font-size: 15px;
+}
+
+.create-account {
+  color: black;
+  font-size: 20px;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: white;
+  padding: 9px 80px;
+  margin-top: 35px;
+  border: solid 1px #0C121C99;
+  font-weight: 300;
+  margin-top: 5px;
+}
