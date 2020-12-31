@@ -71,13 +71,13 @@
 
 | Column         | Type       | Options           |
 | -------------- | ---------- | ----------------- |
-| bakery_name    | string     | null: false       |
 | name_and_price | string     |                   |
 | comment        | text       |                   |
 | tag_list       | integer    |                   |
 | rate           | float      | null: failse      |
 | user_id        | references | foreign_key: true |
 | bakery_id      | references | foreign_key: true |
+| bakery_name    | references | foreign_key: true |
 
 ### Association
 - has_many :taggings
