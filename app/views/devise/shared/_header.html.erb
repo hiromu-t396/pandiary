@@ -1,12 +1,11 @@
 
 <header>
-  <nav>
+  <%= link_to image_tag("registration/pandiary-icon.png", width:"72px", height:"56px"), "/", class:"header-icon" %>
     <% if user_signed_in? %>
-      <strong><%= link_to current_user, pages_show_path %></strong>
-      <%= link_to 'プロフィール変更', edit_user_registration_path %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <%= link_to 'プロフィール変更', edit_user_registration_path, class:"profileEdit" %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"signOut" %>
     <% else %>
-      <%= link_to 'サインアップ', new_user_registration_path, class:"signUp" %>
+      <%= link_to '新規登録', new_user_registration_path, class:"signUp" %>
       <div class='modal-signup'>
         <div class='modal-bg-signup'></div>
         <% if resource %>
@@ -15,6 +14,7 @@
             <div class='contents'>
             <div class='left-content'>
               <div class='main-leftcontent'>
+                <nav>
                 <h3 class='header-left'>限定機能を利用する<h3>
                 <ul class='main-content'>
                   <div class='logo-content'>
@@ -42,6 +42,7 @@
                     </li>
                   </div>
                 </ul>
+                </nav>
               </div>
             </div>
             <div class='line'></div> <%# 真ん中の縦線 %>
@@ -59,10 +60,10 @@
                       <span class='password-error' style='display: none;'>パスワードは英数字含む8文字以上です</span>
                     </div>
                       <input class='signup-btn' type="submit" name="signup-btn" value="続ける">
-                  <div class='move-signin'>
-                    <p class='account'>アカウントをお持ちですか？</p>
-                    <a class='login' href="#">ログイン</a>
-                  </div>
+                    <div class='move-signin'>
+                      <p class='account'>アカウントをお持ちですか？</p>
+                      <a class='login' href="#">ログイン</a>
+                    </div>
               </div>
             </div>
             </div>
@@ -93,7 +94,6 @@
       <% end %>
       </div>
     <% end %>
-  </nav>
 </header>
 
 <script type="text/javascript" src="js/registration.js"></script>

@@ -1,5 +1,44 @@
 header {
   margin: 0;
+  width: 100vw;
+  height: 56px;
+ }
+
+ .header-icon {
+   margin: 40px;
+ }
+
+ .profileEdit {
+  position: absolute;
+  top: 14px;
+  left: 1130px;
+  font-size: 18px;
+  text-decoration: none;
+ }
+
+ .signOut {
+  position: absolute;
+  top: 14px;
+  left: 1290px;
+  font-size: 18px;
+  text-decoration: none;
+ }
+
+
+ .signUp {
+   position: absolute;
+   top: 14px;
+   left: 1220px;
+   font-size: 18px;
+   text-decoration: none;
+ }
+
+ .logIn {
+  position: absolute;
+  top: 14px;
+  left: 1330px;
+  font-size: 18px;
+  text-decoration: none;
  }
 
 .modal-signup {
