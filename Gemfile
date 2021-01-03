@@ -59,3 +59,6 @@ gem 'jquery-rails'
 # 以下2つはdeviseを日本語化
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+# 画像投稿機能
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
