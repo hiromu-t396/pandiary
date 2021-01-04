@@ -62,3 +62,5 @@ gem 'devise-i18n-views'
 # 画像投稿機能
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+# タグ機能実装のため
+gem 'acts-as-taggable-on', '~> 6.0'
