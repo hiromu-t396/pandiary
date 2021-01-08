@@ -4,7 +4,7 @@ class CreateDiaries < ActiveRecord::Migration[6.0]
       t.string :name_and_price
       t.text :comment
       t.integer :tag_list
-      t.float :rate, null: false
+      t.float :rate
       t.references :user, foreign_key: true
       # t.references :bakery_id, foreign_key: true
       # t.references :bakery_name, foreign_key: true

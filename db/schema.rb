@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_030920) do
     t.string "name_and_price"
     t.text "comment"
     t.integer "tag_list"
-    t.float "rate", null: false
+    t.float "rate"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2021_01_04_030920) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -20,6 +20,13 @@ $(function () {
       return false;
   });
 
+/* 新規登録の「ログイン」にマウスオーバーで色が変わる */
+  $('.login').hover(function() {
+    $(this).css('color', '#000080');
+  }, function() {
+    $(this).css('color', '');
+  });
+
 /* 新規登録時メールアドレスのバリデーション */
   $('#signup-form').submit(function()  {
     let error;
