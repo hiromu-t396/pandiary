@@ -8,7 +8,6 @@
       <%= link_to '新規登録', new_user_registration_path, class:"signUp" %>
       <div class='modal-signup'>
         <div class='modal-bg-signup'></div>
-        <% if resource %>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {novalidate: true, id: "signup-form"}) do |f| %>
           <%# <%= render "devise/shared/error_messages", resource: resource %> 
             <div class='contents'>
@@ -20,25 +19,25 @@
                   <div class='logo-content'>
                     <li class='favorite'>
                       <%= image_tag "registration/heart.png", alt: "Rails icon", id: "favorite", class: "image", width: "30px", height: "30px" %>
-                      <span class= 'feature_description'>お気に入り登録</span>
+                      <span id= 'favorite-span'>お気に入り登録</span>
                     </li>
                   </div>
                   <div class='logo-content'>
                     <li class='look-back'>
                       <%= image_tag "registration/eye.png", alt: "Rails icon", id: "eye", class: "image", width: "30px", height: "30px" %>
-                      <span class= 'feature_description'>いいねした投稿を見返せる</span>
+                      <span id= 'eye-span'>いいねした投稿を見返せる</span>
                     </li>
                   </div>
                   <div class='logo-content'>
                     <li class='share'>
                       <%= image_tag "registration/note.png", alt: "Rails icon", id: "note", class: "image", width: "30px", height: "30px" %>
-                      <span class= 'feature_description'>店の情報を共有する</span>
+                      <span id= 'note-span'>店の情報を共有する</span>
                     </li>
                   </div>
                   <div class='logo-content'>
                     <li class='group'>
                       <%= image_tag "registration/people2.png", alt: "Rails icon", id: "people", class: "image", width: "30px", height: "30px" %>
-                      <span class= 'feature_description'>グループに参加し情報をゲット</span>
+                      <span id= 'people-span'>グループに参加し情報をゲット</span>
                     </li>
                   </div>
                 </ul>
@@ -67,7 +66,6 @@
               </div>
             </div>
             </div>
-          <% end %>
         <% end %>
       </div>
       <%= link_to 'ログイン', new_user_session_path, class:"logIn" %>

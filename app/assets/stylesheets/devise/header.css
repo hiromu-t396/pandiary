@@ -70,10 +70,52 @@ header {
   margin-top: 100px;
 }
 
-.image {
-  float: left;
-  padding-right: 15px;
-  padding-bottom: 15px;
+#favorite {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+#favorite-span {
+  position: absolute;
+  top: 1px;
+  left: 50px;
+}
+
+#eye {
+  position: absolute;
+  top: 60px;
+  left: 1px;
+}
+
+#eye-span {
+  position: absolute;
+  top: 63px;
+  left: 50px;
+}
+
+#note {
+  position: absolute;
+  top: 120px;
+  left: 4px;
+}
+
+#note-span {
+  position: absolute;
+  top: 122px;
+  left: 50px;
+}
+
+#people {
+  position: absolute;
+  top: 180px;
+  left: 1px;
+}
+
+#people-span {
+  position: absolute;
+  top: 183px;
+  left: 50px;
 }
 
 .header-left {
@@ -99,6 +141,7 @@ header {
   color: #0C121C99;
   font-size: 18px;
   margin-bottom:  47px;
+  width: 400px;
 }
 
 .line {

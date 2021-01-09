@@ -64,3 +64,5 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 # タグ機能実装のため
 gem 'acts-as-taggable-on', '~> 6.0'
+# S3に画像を保存
+gem "aws-sdk-s3", require: false
