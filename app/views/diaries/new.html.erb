@@ -1,0 +1,45 @@
+<script type="text/javascript" src="js/jquery.raty.js"></script>
+<%= render "devise/shared/header" %> 
+
+<%= form_with model:@diary, class: 'diary-form', local: true do |f| %>
+<div class="diary-content">
+  <div class="diary-left-content">
+    <div class="name-price"> 
+      <span class="diary-name-price">パンの名前・値段</span>
+      <%= f.text_field :name_and_price, class: 'name-price', placeholder:'例)バケット 150円' %>
+    </div>
+    <div class="diary-images">
+      <span id="diary-image">画像(複数投稿可能)</span>
+      <%= f.file_field :images, class: 'images', name: 'diary[images][]', multiple: true %>
+    </div>
+    <div class="diary-comment">
+      <span id="input-diary-comment">コメント</span>
+      <%= f.text_area :comment, class: 'comment', size: "30x5"%>
+    </div>
+    <div class="diary-tags">
+      <span id="diary-tag">タグ</span>
+      <%= f.text_field :tag_list, value: @diary.tag_list.join(','), class: 'diary-tags', placeholder:'例)バケット,ハード系,東京パン屋' %>
+    </div>
+    <div class="diary-rates">
+      <span id="diary-rate">評価</span>
+      <%= f.hidden_field :rate, id: :review_star %>
+    </div>
+
+      <script>
+    $('#star').raty({
+      size     : 36,
+      starOff:  '<%= asset_path('rate/star-off.png') %>',
+      starOn : '<%= asset_path('rate/star-on.png') %>',
+      starHalf: '<%= asset_path('rate/star-half.png') %>',
+      scoreName: 'diary[rate]',
+      half: true,
+    });
+    </script>  
+  </div>
+  <div class="diary-center-line"></div>
+  <div class="diary-right-content">
+  
+  <%= f.submit '投稿', class: 'form-submit' %>
+  </div>
+</div>
+<% end %>
