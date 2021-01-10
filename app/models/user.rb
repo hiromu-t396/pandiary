@@ -11,4 +11,6 @@ class User < ApplicationRecord
     validates :email
     validates :password
   end
+
+  has_many :diaries
 end
