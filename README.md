@@ -125,23 +125,23 @@
 
 # bakerys テーブル
 
-| Column    | Type    | Options           |
-| --------- | ------- | ----------------- |
-| name      | string  | null: false       |
-| address   | string  |                   |
-| tell      | string  |                   |
-| monday    | integer |                   |
-| tuesday   | integer |                   |
-| wednesday | integer |                   |
-| thursday  | integer |                   |
-| friday    | integer |                   |
-| saturday  | integer |                   |
-| sunday    | integer |                   |
-| parking   | integer | foreign_key: true |
-| web_site  | string  | foreign_key: true |
-| instagram | string  | foreign_key: true |
-| twitter   | string  | foreign_key: true |
+| Column       | Type    | Options           |
+| ---------    | ------- | ----------------- |
+| name         | string  | null: false       |
+| address      | string  | null:false        |
+| tell         | string  |                   |
+| monday_id    | integer |                   |
+| tuesday_id   | integer |                   |
+| wednesday_id | integer |                   |
+| thursday_id  | integer |                   |
+| friday_id    | integer |                   |
+| saturday_id  | integer |                   |
+| sunday_id    | integer |                   |
+| parking_id   | integer | null: false       |
+| web_site     | string  |                   |
+| instagram    | string  |                   |
+| twitter      | string  |                   |
 
 ### Association
 
-- has_many :diary
+- has_many :diaries
