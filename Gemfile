@@ -66,3 +66,5 @@ gem 'image_processing', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.0'
 # S3に画像を保存
 gem "aws-sdk-s3", require: false
+# Active_Hash
+gem 'active_hash'
