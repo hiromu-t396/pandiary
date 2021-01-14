@@ -71,9 +71,9 @@
 
 | Column         | Type       | Options           |
 | -------------- | ---------- | ----------------- |
-| name_and_price | string     |                   |
-| comment        | text       |                   |
-| rate           | float      | null: failse      |
+| name_and_price | string     | null: false       |
+| comment        | text       | null: false       |
+| rate           | float      | null: false       |
 | user_id        | references | foreign_key: true |
 | bakery_id      | references | foreign_key: true |
 | bakery_name    | references | foreign_key: true |

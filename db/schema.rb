@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2021_01_14_010225) do
   end
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name_and_price"
-    t.text "comment"
-    t.float "rate"
+    t.string "name_and_price", null: false
+    t.text "comment", null: false
+    t.float "rate", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
