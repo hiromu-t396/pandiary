@@ -73,7 +73,6 @@
 | -------------- | ---------- | ----------------- |
 | name_and_price | string     |                   |
 | comment        | text       |                   |
-| tag_list       | integer    |                   |
 | rate           | float      | null: failse      |
 | user_id        | references | foreign_key: true |
 | bakery_id      | references | foreign_key: true |
