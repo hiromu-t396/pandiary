@@ -76,7 +76,6 @@
 | rate           | float      | null: false       |
 | user_id        | references | foreign_key: true |
 | bakery_id      | references | foreign_key: true |
-| bakery_name    | references | foreign_key: true |
 
 ### Association
 - has_many :taggings
