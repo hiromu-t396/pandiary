@@ -1,7 +1,6 @@
-<script type="text/javascript" src="js/jquery.raty.js"></script>
 <%= render "devise/shared/header" %> 
 
-<%= form_with model:@diary, class: 'diary-form', local: true do |f| %>
+<%= form_with model:@diary_bakery, url:diaries_path,  class: 'diary-form', local: true do |f| %>
 <div class="diary-content">
   <div class="diary-left-content">
     <div class="name-price"> 
@@ -16,30 +15,110 @@
       <span id="input-diary-comment">コメント</span>
       <%= f.text_area :comment, class: 'comment', size: "30x5"%>
     </div>
-    <div class="diary-tags">
-      <span id="diary-tag">タグ</span>
-      <%= f.text_field :tag_list, value: @diary.tag_list.join(','), class: 'diary-tags', placeholder:'例)バケット,ハード系,東京パン屋' %>
-    </div>
-    <div class="diary-rates">
-      <span id="diary-rate">評価</span>
-      <%= f.hidden_field :rate, id: :review_star %>
+    <%# <div class="diary-tags">
+      <span id="diary-tag">タグ</span>%>
+      <%# <%= f.label :tag_list %> 
+      <%# <%= f.text_field :tag_list, value: @diary_bakery.tag_list.join(','), class: 'diary-tags', placeholder:'例)バケット,ハード系,東京パン屋' %> 
+    <%# </div> %>
+    <div class="diary-rate" id="star">
+      <%= f.label :rate,'評価', id:'diary-review' %>
+      <%= f.hidden_field :rate, id: 'review_star' %>
     </div>
 
-      <script>
-    $('#star').raty({
-      size     : 36,
-      starOff:  '<%= asset_path('rate/star-off.png') %>',
-      starOn : '<%= asset_path('rate/star-on.png') %>',
-      starHalf: '<%= asset_path('rate/star-half.png') %>',
-      scoreName: 'diary[rate]',
-      half: true,
-    });
-    </script>  
+  <!-- 星評価javascript -->
+  <script>
+  console.log("asset_path");
+  $('#star').raty({
+    size     : 32,
+    starOff:  '<%= asset_path('/assets/rate/star-off.png') %>',
+    starOn : '<%= asset_path('/assets/rate/star-on.png') %>',
+    starHalf: '<%= asset_path('/assets/rate/star-half.png') %>',
+    scoreName: 'diary[rate]',
+    half: true,
+  });
+  </script>  
+
   </div>
   <div class="diary-center-line"></div>
   <div class="diary-right-content">
-  
-  <%= f.submit '投稿', class: 'form-submit' %>
+    <div class="bakery-info">
+      <p id="diary-bakery-info">店舗情報</p>
+        <div class="bakery-name-info">
+          <p id="bakery-name">店名</p>
+          <%= f.text_field :name, class: 'bakery-name' %>
+        </div>
+        <div class="bakery-address-info">
+          <p id="bakery-address">住所</p>
+          <%= f.text_field :address, class: 'bakery-address' %>
+        </div>
+        <div class="bakery-tell-info">
+          <p id="bakery-tell">電話番号</p>
+          <%= f.text_field :tell, class: 'bakery-tell', placeholder: '例）07011112222'%>
+        </div>
+        <div class="bakery-opening-info">
+          <p id="bakery-openig">営業時間</p>
+          <p id="bakery-closing">(定休日の曜日は未記入で投稿してください)</p>
+            <div class="bakery-monday">
+              <p id="monday">月曜日</p>
+              <%= f.collection_select(:monday_op_id, Open.all, :id, :name, {}, {id:"monday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:monday_clo_id, Open.all, :id, :name, {}, {id:"monday-clo-select"}) %>
+            </div>
+            <div class="bakery-tuesday">
+              <p id="tuesday">火曜日</p>
+              <%= f.collection_select(:tuesday_op_id, Open.all, :id, :name, {}, {id:"tuesday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:tuesday_clo_id, Open.all, :id, :name, {}, {id:"tuesday-clo-select"}) %>
+            </div>
+            <div class="bakery-wednesday">
+              <p id="wednesday">水曜日</p>
+              <%= f.collection_select(:wednesday_op_id, Open.all, :id, :name, {}, {id:"wednesday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:wednesday_clo_id, Open.all, :id, :name, {}, {id:"wednesday-clo-select"}) %>
+            </div>
+            <div class="bakery-thursday">
+              <p id="thursday">木曜日</p>
+              <%= f.collection_select(:thursday_op_id, Open.all, :id, :name, {}, {id:"thursday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:thursday_clo_id, Open.all, :id, :name, {}, {id:"thursday-clo-select"}) %>
+            </div>
+             <div class="bakery-friday">
+              <p id="friday">金曜日</p>
+              <%= f.collection_select(:friday_op_id, Open.all, :id, :name, {}, {id:"friday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:friday_clo_id, Open.all, :id, :name, {}, {id:"friday-clo-select"}) %>
+            </div>
+            <div class="bakery-saturday">
+              <p id="saturday">土曜日</p>
+              <%= f.collection_select(:saturday_op_id, Open.all, :id, :name, {}, {id:"saturday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:saturday_clo_id, Open.all, :id, :name, {}, {id:"saturday-clo-select"}) %>
+            </div>
+            <div class="bakery-sunday">
+              <p id="sunday">日曜日</p>
+              <%= f.collection_select(:sunday_op_id, Open.all, :id, :name, {}, {id:"sunday-op-select"}) %>
+              <p id="namisen">~</p>
+              <%= f.collection_select(:sunday_clo_id, Open.all, :id, :name, {}, {id:"sunday-clo-select"}) %>
+            </div>
+        </div>
+        <div class="parking-info">
+          <p id="parking">駐車場</p>
+          <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {id:"parking-select"}) %>
+        </div>
+        <div class="web-info">
+          <p id="web">Web</p>
+          <%= f.text_field :web_site, class: 'web-site' %>
+        </div>
+        <div class="insta-info">
+          <p id="insta">Instagram</p>
+          <%= f.text_field :instagram, class: 'instagram' %>
+        </div>
+        <div class="twitter-info">
+          <p id="twitter">Twitter</p>
+          <%= f.text_field :twitter, class: 'twitter' %>
+        </div>
+    </div>
+    <%= f.submit '投稿', class: 'form-submit' %>
   </div>
 </div>
 <% end %>
