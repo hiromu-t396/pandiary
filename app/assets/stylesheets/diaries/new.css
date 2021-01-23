@@ -76,22 +76,21 @@
   left: 50px;
 }
 
-.diary-rates {
-  width: 300px;
+.diary-rate {
   position: absolute;
-  top: 300px;
-  left: 50px;
+  top: 630px;
+  left: 100px;
 }
 
-#diary-rate {
+#diary-review {
   position: absolute;
-  top: 280px;
-  left: 50px;
+  top: -30px;
+  left: 0px;
 }
 
 .diary-center-line {
   border-left: solid 1px #0C121C99;
-  height: 600px;
+  height: 1000px;
 }
 
 .diary-right-content {
@@ -100,9 +99,326 @@
   position: relative;
 }
 
-.form-submit {
+#diary-bakery-info {
   position: absolute;
-  top: 650px;
-  left: 500px;
+  top: 5px;
+  left: 60px;
+  font-size: 20px;
 }
 
+.bakery-name-info {
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  display: flex;
+  height: 40px;
+}
+
+#bakery-name {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.bakery-name {
+  margin-left: 30px;
+  padding: 0px 360px 0px 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.bakery-address-info {
+  position: absolute;
+  top: 140px;
+  left: 80px;
+  display: flex;
+  height: 40px;
+}
+
+#bakery-address {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.bakery-address {
+  margin-left: 30px;
+  padding: 0px 360px 0px 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.bakery-tell-info {
+  position: absolute;
+  top: 210px;
+  left: 50px;
+  display: flex;
+  height: 40px;
+}
+
+#bakery-tell {
+  margin-left: 18px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.bakery-tell {
+  margin-left: 12px;
+  padding: 0px 360px 0px 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.bakery-opening-info {
+  display: flex;
+  position: absolute;
+  top: 280px;
+  left: 70px;
+}
+
+#bakery-closing {
+  margin-left: 40px;
+  color: #39404db9;
+}
+
+.bakery-monday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 67px;
+  left: 50px;
+  height: 20px;
+}
+
+#monday {
+  margin-right: 30px;
+}
+
+#monday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#namisen {
+  margin: 20px;
+}
+
+#monday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-tuesday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 107px;
+  left: 50px;
+  height: 20px;
+}
+
+#tuesday {
+  margin-right: 30px;
+}
+
+#tuesday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#tuesday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-wednesday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 147px;
+  left: 50px;
+  height: 20px;
+}
+
+#wednesday {
+  margin-right: 30px;
+}
+
+#wednesday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#wednesday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-thursday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 187px;
+  left: 50px;
+  height: 20px;
+}
+
+#thursday {
+  margin-right: 30px;
+}
+
+#thursday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#thursday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-friday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 227px;
+  left: 50px;
+  height: 20px;
+}
+
+#friday {
+  margin-right: 30px;
+}
+
+#friday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#friday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-saturday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 267px;
+  left: 50px;
+  height: 20px;
+}
+
+#saturday {
+  margin-right: 30px;
+}
+
+#saturday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#saturday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.bakery-sunday {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 307px;
+  left: 50px;
+  height: 20px;
+}
+
+#sunday {
+  margin-right: 30px;
+}
+
+#sunday-op-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+#sunday-clo-select {
+  padding: 0 10px;
+  height: 25px;
+}
+
+.parking-info {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 640px;
+  left: 80px;
+}
+
+#parking-select {
+  margin-left: 20px;
+  height: 25px;
+}
+
+.web-info {
+  display: flex;
+  position: absolute;
+  top: 720px;
+  left: 80px;
+  height: 40px;
+}
+
+#web {
+  margin-top: 8px;
+}
+
+.web-site {
+  margin-left: 40px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0px 360px 0px 10px;
+}
+
+.insta-info {
+  display: flex;
+  position: absolute;
+  top: 790px;
+  left: 60px;
+  height: 40px;
+}
+
+#insta {
+  margin-top: 8px;
+}
+
+.instagram {
+  margin-left: 16px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0px 360px 0px 10px;
+}
+
+.twitter-info {
+  display: flex;
+  position: absolute;
+  top: 860px;
+  left: 73px;
+  height: 40px;
+}
+
+#twitter {
+  margin-top: 8px;
+}
+
+.twitter {
+  margin-left: 28px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0px 360px 0px 10px;
+}
+
+
+
+
+.form-submit {
+  position: absolute;
+  top: 1050px;
+  left: 500px;
+}
