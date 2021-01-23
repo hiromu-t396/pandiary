@@ -3,5 +3,6 @@ class Diary < ApplicationRecord
   acts_as_taggable
 
   belongs_to :user
+  belongs_to :bakery
   has_many_attached :images
 end
