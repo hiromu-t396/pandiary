@@ -103,7 +103,7 @@
         </div>
         <div class="parking-info">
           <p id="parking">駐車場</p>
-          <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {id:"parking-select"}) %>
+            <%= f.select(:parking_id, {'--': 1, '有り': 2, "無し": 3}, {id:"parking-select"}) %>
         </div>
         <div class="web-info">
           <p id="web">Web</p>
