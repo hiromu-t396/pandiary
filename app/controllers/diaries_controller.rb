@@ -10,7 +10,8 @@ class DiariesController < ApplicationController
 
   def create
     binding.pry
-    @diary_bakery = DiaryBakery.create(diary_params)
+    @diary_bakery = DiaryBakery.new(diary_params)
+    @diary_bakery.tag_list = @diary_bakery.tag_list.split(',')
      if @diary_bakery.save
        redirect_to action: :index
      else
