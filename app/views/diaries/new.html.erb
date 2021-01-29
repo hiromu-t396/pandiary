@@ -1,6 +1,7 @@
 <%= render "devise/shared/header" %> 
 
 <%= form_with model:@diary_bakery, url:diaries_path,  class: 'diary-form', local: true do |f| %>
+<%# <%= render 'shared/error_messages', model: f.object %> 
 <div class="diary-content">
   <div class="diary-left-content">
     <div class="name-price"> 
@@ -15,14 +16,13 @@
       <span id="input-diary-comment">コメント</span>
       <%= f.text_area :comment, class: 'comment', size: "30x5"%>
     </div>
-    <%# <div class="diary-tags">
-      <span id="diary-tag">タグ</span>%>
-      <%# <%= f.label :tag_list %> 
-      <%# <%= f.text_field :tag_list, value: @diary_bakery.tag_list.join(','), class: 'diary-tags', placeholder:'例)バケット,ハード系,東京パン屋' %> 
-    <%# </div> %>
+    <div class="diary-tags">
+      <span id="diary-tag">タグ</span>
+      <% f.label :tag_list %>
+       <%= f.text_field :tag_list, value: @diary_bakery.tag_list, class: 'diary-tags', placeholder:'例)バケット,ハード系,東京パン屋' %> 
+   </div>
     <div class="diary-rate" id="star">
       <%= f.label :rate,'評価', id:'diary-review' %>
-      <%= f.hidden_field :rate, id: 'review_star' %>
     </div>
 
   <!-- 星評価javascript -->
@@ -33,7 +33,7 @@
     starOff:  '<%= asset_path('/assets/rate/star-off.png') %>',
     starOn : '<%= asset_path('/assets/rate/star-on.png') %>',
     starHalf: '<%= asset_path('/assets/rate/star-half.png') %>',
-    scoreName: 'diary[rate]',
+    scoreName: 'diary_bakery[rate]',
     half: true,
   });
   </script>  
